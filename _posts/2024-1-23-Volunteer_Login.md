@@ -5,7 +5,7 @@ title: Login Page
 description: Login Page for Volunteer
 courses: {'compsci': {'week': 4}}
 type: hacks
-permalink: /lmc-login
+permalink: /volunteer-login
 ---
 <style>
 
@@ -47,7 +47,7 @@ The form triggers the login_user function defined in the JavaScript below when t
         <p>
             <button>Login</button>
         </p>
-        <a href='{{site.baseurl}}/lmc-createUser'>Register</a>
+        <a href='{{site.baseurl}}/createUser'>Register</a>
     </form>
 </div>
 
