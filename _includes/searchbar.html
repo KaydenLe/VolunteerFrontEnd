@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Simple Search Bar</title>
+    <title>Simple Search Bar with Filter</title>
     <style>
-        #searchBar {
+        #searchBar, #filter-dropdown {
             width: 300px;
             padding: 10px;
+            margin-bottom: 10px;
             border: 2px solid #ccc;
             border-radius: 5px;
         }
@@ -25,17 +26,24 @@
     </style>
 </head>
 <body>
-    <form id="searchForm" onsubmit="searchQuery()">
+    <form id="searchForm" onsubmit="searchQuery(event)">
         <input type="text" id="searchBar" name="search" placeholder="Search...">
+        <select id="filter-dropdown">
+            <option value="all">All</option>
+            <option value="category1">Category 1</option>
+            <option value="category2">Category 2</option>
+            <option value="category3">Category 3</option>
+        </select>
         <input type="submit" id="searchButton" value="Search">
     </form>
 
     <script>
-        function searchQuery() {
+        function searchQuery(event) {
             event.preventDefault(); // Prevents the default form submit action
             var searchInput = document.getElementById('searchBar').value;
-            alert("Search for: " + searchInput);
-            // You can add code here to handle the search input, like sending it to a server
+            var filterOption = document.getElementById('filter-dropdown').value;
+            alert("Search for: " + searchInput + "\nFilter: " + filterOption);
+            // You can add code here to handle the search input and filter option, like sending them to a server
         }
     </script>
 </body>
